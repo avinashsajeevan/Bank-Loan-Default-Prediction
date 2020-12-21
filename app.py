@@ -5,14 +5,14 @@ import pickle
 
 # loading the trained model
 pickle_in = open('model.pkl', 'rb')
-classifier = pickle.load(pickle_in)
+model = pickle.load(pickle_in)
 
 
 # defining the function which will make the prediction using the data which the user inputs
 def prediction(age, ed, employ, address, income, debtinc, creddebt, othdebt):
 
     # Making predictions
-    prediction = clf.predict(
+    prediction = model.predict(
         [[age, ed, employ, address, income, debtinc, creddebt, othdebt]])
 
     if prediction > 0.4795718:
