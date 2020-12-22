@@ -47,7 +47,7 @@ def run():
     address = st.number_input('Geographic area', min_value=0, value=2)
     income = st.number_input('Gross Income', value=0.1, step=0.01)
     debtinc = st.number_input('Individuals debt', value=0.1, step=0.01)
-    creddebt = st.number_input('Debt-to-Credit Ratio', value=1, step=0.01)
+    creddebt = st.number_input('Debt-to-Credit Ratio', value=0.1, step=0.01)
     othdebt = st.number_input('Any other debts', value=0.1, step=0.01)
     result = ""
 
