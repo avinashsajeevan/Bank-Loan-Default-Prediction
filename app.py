@@ -45,10 +45,10 @@ def run():
     ed = st.number_input('Education Category', min_value=0, value=1)
     employ = st.number_input('Employment status', min_value=0, value=18)
     address = st.number_input('Geographic area', min_value=0, value=2)
-    income = st.number_input('Gross Income', value=1)
-    debtinc = st.number_input('Individuals debt', value=1)
-    creddebt = st.number_input('Debt-to-Credit Ratio', value=1)
-    othdebt = st.number_input('Any other debts', value=1)
+    income = st.number_input('Gross Income', value=1, step=0.01)
+    debtinc = st.number_input('Individuals debt', value=1, step=0.01)
+    creddebt = st.number_input('Debt-to-Credit Ratio', value=1, step=0.01)
+    othdebt = st.number_input('Any other debts', value=1, step=0.01)
     result = ""
 
     # when 'Predict' is clicked, make the prediction and store it
