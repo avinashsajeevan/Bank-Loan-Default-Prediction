@@ -19,7 +19,7 @@ def prediction(age, ed, employ, address, income, debtinc, creddebt, othdebt):
               "creddebt" : creddebt,
                 "othdebt" : othdebt}
     input_df = pd.DataFrame([input_dict])
-    predict1 = logreg.predict_proba(input_df)[:, 1]
+    predict1 = model.predict_proba(input_df)[:, 1]
     if predict1 >= 0.473647:
         c = "Default"
     else:
