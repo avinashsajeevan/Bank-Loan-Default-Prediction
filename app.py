@@ -19,7 +19,7 @@ def prediction(age, ed, employ, address, income, debtinc, creddebt, othdebt):
               "creddebt" : creddebt,
                 "othdebt" : othdebt}
     input_df = pd.DataFrame([input_dict])
-    predict1 = model.predict_proba(input_df)[:, 1]
+    predict1 = logreg.predict_proba(input_df)[:, 1]
     if predict1 >= 0.473647:
         c = "Default"
     else:
@@ -45,10 +45,10 @@ def run():
     ed = st.number_input('Education Category', min_value=0, value=1)
     employ = st.number_input('Employment status', min_value=0, value=18)
     address = st.number_input('Geographic area', min_value=0, value=2)
-    income = st.number_input('Gross Income', value=0.1, step=0.01)
-    debtinc = st.number_input('Individuals debt', value=0.1, step=0.01)
-    creddebt = st.number_input('Debt-to-Credit Ratio', value=0.1, step=0.01)
-    othdebt = st.number_input('Any other debts', value=0.1, step=0.01)
+    income = st.number_input('Gross Income', value=1)
+    debtinc = st.number_input('Individuals debt', value=1)
+    creddebt = st.number_input('Debt-to-Credit Ratio', value=1)
+    othdebt = st.number_input('Any other debts', value=1)
     result = ""
 
     # when 'Predict' is clicked, make the prediction and store it
